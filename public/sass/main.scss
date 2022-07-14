@@ -1,60 +1,163 @@
-$gap-width: 10px;
-$grey_color: rgb(57, 51, 51);
-$white_color: rgba(500, 500, 500, 0.6);
+$main_color: #272a7f;
+$secondary_color: #35DCD9;
 
-.main {
-    
-    .booksWrapper {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 330px));
-        grid-auto-rows: 1fr;
-        grid-gap: 20px;
-        padding: 50px;
-        // grid-auto-flow: dense;
+$breakpoint-mobile: 768px;
 
 
-        .book {
+body, h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: $main_color;
+    height: 80px;
+    width: 100%;
+    position: relative;
+
+    .headerTitle {
+        color: #fff;
+        padding: 10px;
+    }
+
+    form#search {
+        // width: 300px;
+        margin: auto;
+        position: absolute;
+        right: 30px;
+        top: 0;
+        bottom: 0;
+        height: 40px;
+
+        @media (max-width: $breakpoint-mobile) {
+            right: 10px;
+        }
+    }
+
+    input#search {
+        border-radius: 30px;
+        height: 40px;
+        text-indent: 10px;
+        width: 300px;
+        overflow: hidden;
+        z-index: 9999;
+        background: $secondary_color;
+        color: #fff;
+        
+        &::placeholder {
+            color: #fff;
+        }
+        
+        &:focus {
+            outline: none;
+            box-shadow: 3px 2px 10px 2px #000;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            width: 200px;
+        }
+
+
+    }
+
+    button.submit {
+        width: 30px;
+        background: transparent;
+        position: absolute;
+        right: 3px;
+        top: 0;
+        bottom: 0;
+        border: none;
+    }
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    // background-image: url("https://e-square.io/esq-bg.2d4cf37f1b221e7c.webp");
+    // background-repeat: no-repeat;
+    // background-size: cover;
+  
+    .main {
+        
+        .booksWrapper {
             display: flex;
-            flex-direction: column;
-            background-color: teal;
-
-            margin-bottom: 30px;
-            border: 1px solid blue;
-
-            .title {
-                margin: 0;
-                padding: $gap-width;
-                font-weight: normal;
-                border-bottom: 1px solid $white_color;  
-
-                a {
-                    color: $white_color;
-                    text-decoration: none;
-                    &:hover {
-                        text-decoration: underline;
-                        color: white;
+            justify-content: space-between;
+            flex-wrap: wrap;
+    
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 330px));
+            grid-auto-rows: 1fr;
+            grid-gap: 20px;
+            padding: 50px;
+            // grid-auto-flow: dense;
+    
+    
+            .book {
+                display: flex;
+                flex-direction: column;
+                background-color: $secondary_color;
+                margin-bottom: 30px;
+                border: 1px solid $secondary_color;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 5px 5px 15px 5px #000000;
+    
+                .title {
+                    margin: 0;
+                    padding: 20px 10px 5px;
+                    font-weight: normal;
+                    border-bottom: 1px solid $main_color;  
+    
+    
+                    a {
+                        color: #fff;
+                        text-decoration: none;
+                        &:hover {
+                            text-decoration: underline;
+                        }
                     }
                 }
-            }
-            
-            
-            .imgWrapper {
-                max-height: 350px;
-
-                img {
-                    width: 100%;
-                    height: 100%;
+    
+                .imgWrapper {
+                    max-height: 350px;
+                    overflow: hidden;
+    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        transform: scale(1);
+                        transition: 1s;
+                    }
+                }
+    
+                .description {
+                    max-height: 30px;
+                    color: #fff;
+                    padding: 0 10px;
                 }
             }
-
-            .description {
-                max-height: 30px;
+    
+            .book:hover {
+                background: $main_color;
+                border: 1px solid $main_color;
+    
+                .title {
+                    border-bottom: 1px solid $secondary_color; 
+                }
+    
+                .imgWrapper {
+                    
+                    img {
+                        transform: scale(1.1);
+                        transition: 1s;
+                    }
+                }
+    
+    
             }
-
         }
     }
 }
+
+

@@ -1,6 +1,6 @@
 import {books} from './booksList.js';
 // let books;
-const input = document.querySelector('#search-input');
+const input = document.querySelector('input#search');
 
 // fetch data
 async function fetchBooks ( query ) {
