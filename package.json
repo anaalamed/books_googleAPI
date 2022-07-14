@@ -1,0 +1,13 @@
+{
+  "name": "google_books",
+  "version": "1.0.0",
+  "description": "Render Books fro Google API",
+  "main": "books.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon index.js",
+    "watch": "cd public/sass && sass --watch main.scss:../main.css"
+  },
+  "author": "Ana Levit",
+  "license": "ISC"
+}
