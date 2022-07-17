@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books</title>
-    <link rel="icon" href="cv.png">
+    <title>Google Books</title>
+    <link rel="icon"
+        href="https://firebasestorage.googleapis.com/v0/b/books--api.appspot.com/o/2.png?alt=media&token=c67fdcbc-db88-4ab8-b3b7-e8c703603779">
     <link rel='stylesheet' href='styles/main.css'>
 
     <script src="js/books.js" type="module"></script>
@@ -13,7 +14,13 @@
 
 <body>
     <header class='header'>
-        <h1 class='headerTitle'>Books</h1>
+        <div class="logoTitle">
+            <div class="logoWrapper">
+                <img
+                    src="https://firebasestorage.googleapis.com/v0/b/books--api.appspot.com/o/2.png?alt=media&token=c67fdcbc-db88-4ab8-b3b7-e8c703603779" />
+            </div>
+            <h1 class='headerTitle'>Books</h1>
+        </div>
 
         <form id="search">
             <input id="search" type="search" name="q" placeholder="Search Books">
@@ -27,7 +34,12 @@
     </header>
 
     <main>
-        <div class="main">
+        <div class="booksSection">
+            <h2 class="booksSectionTitle">Books</h2>
+            <div class="sortButtns">
+                <p id="sortByDate" class="sortButton" set="down">Sort by published date</p>
+                <p id="sortByPages" class="sortButton" set="down">Sort by amount of page</p>
+            </div>
             <div class="booksWrapper"></div>
         </div>
     </main>
