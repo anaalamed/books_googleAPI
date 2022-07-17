@@ -60,10 +60,13 @@ h1, h2 {
         right: 30px;
         top: 0;
         bottom: 0;
-        height: 40px;
+        // height: 40px;
+        display: flex;
+        align-items: center;
 
         @media (max-width: $breakpoint-mobile) {
             right: 10px;
+            flex-direction: column;
         }
     }
 
@@ -89,6 +92,14 @@ h1, h2 {
         @media (max-width: $breakpoint-mobile) {
             width: 200px;
         }
+    }
+
+    .searchWrapper {
+        position: relative;
+    }
+
+    .searchByAuthorLabel {
+        color: #fff;
     }
 
     button.submit {
@@ -122,7 +133,6 @@ main {
             justify-content: start;
 
             .sortButton {
-                // width: 100px;
                 color: $main_color;
                 margin: 0 25px;
                 // padding: 0 35px;
@@ -199,7 +209,6 @@ main {
                     &:hover {
                         text-decoration: underline;
                     }
-
                 }
     
                 .imgWrapper {
@@ -226,6 +235,10 @@ main {
                     height: 55px;
                     margin: 8px 5px 5px;
                     overflow: hidden;
+                }
+
+                .author {
+                    text-align: center;
                 }
             }                
     

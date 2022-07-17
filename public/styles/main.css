@@ -50,11 +50,13 @@ h1, h2 {
   right: 30px;
   top: 0;
   bottom: 0;
-  height: 40px;
+  display: flex;
+  align-items: center;
 }
 @media (max-width: 767px) {
   .header form#search {
     right: 10px;
+    flex-direction: column;
   }
 }
 .header input#search {
@@ -78,6 +80,12 @@ h1, h2 {
   .header input#search {
     width: 200px;
   }
+}
+.header .searchWrapper {
+  position: relative;
+}
+.header .searchByAuthorLabel {
+  color: #fff;
 }
 .header button.submit {
   width: 30px;
@@ -188,6 +196,9 @@ main .booksSection .booksWrapper .book .description {
   height: 55px;
   margin: 8px 5px 5px;
   overflow: hidden;
+}
+main .booksSection .booksWrapper .book .author {
+  text-align: center;
 }
 main .booksSection .booksWrapper .book:hover {
   background: #272a7f;
