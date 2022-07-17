@@ -3,6 +3,8 @@ body {
   padding: 0;
   background: #524f4b;
   background: linear-gradient(342deg, rgba(82, 79, 75, 0.8357162689) 51%, rgba(198, 200, 196, 0.8432139127) 100%) fixed;
+  background: #d8d8dc;
+  background: linear-gradient(90deg, #d8d8dc 13%, #a4a4ce 61%, #bde2ea 100%) fixed;
 }
 
 h1, h2 {
@@ -10,6 +12,32 @@ h1, h2 {
   padding: 0;
 }
 
+.loader {
+  border: 16px solid #272a7f;
+  /* Light grey */
+  border-top: 16px solid #35DCD9;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .header {
   background-color: #272a7f;
   height: 80px;

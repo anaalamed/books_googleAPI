@@ -5,6 +5,8 @@ const input = document.querySelector('input#search');
 const searchByAuthor = document.querySelector('input#searchByAuthor');
 const btnSortByDate = document.querySelector('p#sortByDate');
 const btnsortByPages = document.querySelector('p#sortByPages');
+const loader = document.querySelector('.loader');
+
 
 // start books - default get request
 const startDefaultFetch = () => {
@@ -12,6 +14,7 @@ const startDefaultFetch = () => {
     .then(data => {
         books = data.items;
         renderBooks(books);
+        loader.style.display = "none";
     });
 }
 startDefaultFetch();
@@ -36,10 +39,14 @@ async function fetchBooks ( query ) {
 // submit search
 document.querySelector('#search').addEventListener('submit', (event) => {
     event.preventDefault();
+    document.querySelector('.booksWrapper').innerHTML = "";
+    loader.style.display = "block";
+
     fetchBooks(input.value)
     .then(data => {
         books = data.items;
         renderBooks(books);
+        loader.style.display = "none";
     });
 })
 
@@ -50,7 +57,7 @@ const renderBooks = ( books = []) => {
     document.querySelector('.booksWrapper').innerHTML = books.map(renderBook).join("") 
 }
 
-// render  one book
+// render one book
 const renderBook = (book = {}) =>  {
     try {
         return `<div class='book' id=${book.id} published=${book.volumeInfo.publishedDate?.slice(0,4) || 0} pages=${book.volumeInfo.pageCount || 0}>
@@ -103,6 +110,7 @@ btnSortByDate.addEventListener("click", (event) => {
     sortByPublishedDate(setDirection);
     renderBooks(books);
     btnSortByDate.classList.add("activeSort");
+    btnsortByPages.classList.remove("activeSort");
     btnSortByDate.setAttribute("set", toggleDirection(setDirection));
 })
 
@@ -119,9 +127,9 @@ const sortByAmountOfPages = (setDirection) => {
             }
         
             if (setDirection === "down") {
-                return a.volumeInfo.pageCount - b.volumeInfo.pageCount;
-            } else {
                 return b.volumeInfo.pageCount - a.volumeInfo.pageCount;
+            } else {
+                return a.volumeInfo.pageCount - b.volumeInfo.pageCount;
             }
         })
     } catch(error) {
@@ -135,4 +143,5 @@ btnsortByPages.addEventListener("click", (event) => {
     renderBooks(books);
     btnsortByPages.setAttribute("set", toggleDirection(setDirection));
     btnsortByPages.classList.add("activeSort");
+    btnSortByDate.classList.remove("activeSort");
 })

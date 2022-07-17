@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Books</title>
     <description>Render Books From Google API</description>
-    <link rel="icon" href="./icons//logo.png">
-    <link rel='stylesheet' href='styles/main.css'>
-    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./public/icons/logo.png">
+    <link rel='stylesheet' href='./public/styles/main.css'>
+    <link rel="manifest" href="./public/manifest.json">
 
     <og:title>Google Books</og:title>
     <og:description>Render Books From Google API</og:description>
@@ -17,15 +17,17 @@
     </og:image>
 
 
-    <script src="js/books.js" type="module"></script>
+    <script src="./public/js/books.js" type="module"></script>
 </head>
 
 <body>
     <header class='header'>
         <div class="logoTitle">
             <div class="logoWrapper">
-                <img
-                    src="https://firebasestorage.googleapis.com/v0/b/books--api.appspot.com/o/2.png?alt=media&token=c67fdcbc-db88-4ab8-b3b7-e8c703603779" />
+                <a href="/">
+                    <img
+                        src="https://firebasestorage.googleapis.com/v0/b/books--api.appspot.com/o/2.png?alt=media&token=c67fdcbc-db88-4ab8-b3b7-e8c703603779" />
+                </a>
             </div>
             <h1 class='headerTitle'>Books</h1>
         </div>
@@ -51,6 +53,9 @@
     <main>
         <div class="booksSection">
             <h2 class="booksSectionTitle">Books</h2>
+
+            <div class="loader"></div>
+
             <div class="sortButtns">
                 <p id="sortByDate" class="sortButton" set="down">Sort by published date</p>
                 <p id="sortByPages" class="sortButton" set="down">Sort by amount of page</p>
