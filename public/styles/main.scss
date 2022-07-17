@@ -13,7 +13,7 @@ body {
     background: linear-gradient(342deg, rgba(82,79,75,0.8357162689294468) 51%, rgba(198,200,196,0.8432139127101581) 100%) fixed;
     
     background: rgb(216,216,220);
-background: linear-gradient(90deg, rgba(216,216,220,1) 13%, rgba(164,164,206,1) 61%, rgba(189,226,234,1) 100%) fixed;
+    background: linear-gradient(90deg, rgba(216,216,220,1) 13%, rgba(164,164,206,1) 61%, rgba(189,226,234,1) 100%) fixed;
 }
 
 h1, h2 {
@@ -169,6 +169,10 @@ main {
             margin: auto;
             z-index: 99999;
             background: $main_color;
+
+            @media (max-width: $breakpoint-mobile) {
+                width: 20%;
+            }
         }
         h2.booksSectionTitle:after {
             right: 0;
@@ -220,7 +224,7 @@ main {
         .booksWrapper {            
             display: grid;
             justify-content: center;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 330px));
+            grid-template-columns: repeat(auto-fill, minmax(240px, 270px));
             grid-auto-rows: 1fr;
             grid-gap: 35px;
             margin: 0 auto;
@@ -263,7 +267,7 @@ main {
                 .imgWrapper {
                     overflow: hidden;
                     position: relative;
-                    height: 350px;
+                    height: 310px;
     
                     img {
                         width: 100%;
