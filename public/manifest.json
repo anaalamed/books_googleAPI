@@ -1,0 +1,16 @@
+{
+    "short_name": "Books",
+    "name": "Google API Books",
+    "icons": [
+        {
+            "src": "https://firebasestorage.googleapis.com/v0/b/books--api.appspot.com/o/2.png?alt=media&token=c67fdcbc-db88-4ab8-b3b7-e8c703603779",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/index.html",
+    "background_color": "#272a7f",
+    "display": "standalone",
+    "scope": "/app/",
+    "theme_color": "#35DCD9"
+}

@@ -10,7 +10,7 @@ body {
     margin: 0;
     padding: 0;
     background: rgb(82,79,75);
-    background: linear-gradient(342deg, rgba(82,79,75,0.8357162689294468) 51%, rgba(198,200,196,0.8432139127101581) 100%);
+    background: linear-gradient(342deg, rgba(82,79,75,0.8357162689294468) 51%, rgba(198,200,196,0.8432139127101581) 100%) fixed;
 }
 
 h1, h2 {
@@ -102,6 +102,10 @@ h1, h2 {
         color: #fff;
     }
 
+    .checkboxWrapper {
+        margin: 0 10px;
+    }
+
     button.submit {
         width: 30px;
         background: transparent;
@@ -126,6 +130,27 @@ main {
             font-weight: 700;
             margin: 0 auto;
             text-align: center;
+            position: relative;
+        }
+
+        h2.booksSectionTitle:after,
+        h2.booksSectionTitle:before {
+            content: "";
+            width: 40%;
+            height: 3px;
+            position: absolute;
+            display: block;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            z-index: 99999;
+            background: $main_color;
+        }
+        h2.booksSectionTitle:after {
+            right: 0;
+        }
+        h2.booksSectionTitle:before { 
+            left: 0;
         }
 
         .sortButtns {

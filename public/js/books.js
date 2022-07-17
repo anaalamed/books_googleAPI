@@ -6,11 +6,20 @@ const searchByAuthor = document.querySelector('input#searchByAuthor');
 const btnSortByDate = document.querySelector('p#sortByDate');
 const btnsortByPages = document.querySelector('p#sortByPages');
 
+// start books - default get request
+const startDefaultFetch = () => {
+    fetchBooks("2022")
+    .then(data => {
+        books = data.items;
+        renderBooks(books);
+    });
+}
+startDefaultFetch();
 
-// fetch data
+
+// fetch data from API 
 async function fetchBooks ( query ) {
     try {
-        console.log(searchByAuthor.value);
         let data_url;
         if (searchByAuthor.checked == "true" ) {
             data_url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:${query}`
@@ -30,7 +39,6 @@ document.querySelector('#search').addEventListener('submit', (event) => {
     fetchBooks(input.value)
     .then(data => {
         books = data.items;
-        // console.log(books);
         renderBooks(books);
     });
 })

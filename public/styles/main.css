@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background: #524f4b;
-  background: linear-gradient(342deg, rgba(82, 79, 75, 0.8357162689) 51%, rgba(198, 200, 196, 0.8432139127) 100%);
+  background: linear-gradient(342deg, rgba(82, 79, 75, 0.8357162689) 51%, rgba(198, 200, 196, 0.8432139127) 100%) fixed;
 }
 
 h1, h2 {
@@ -87,6 +87,9 @@ h1, h2 {
 .header .searchByAuthorLabel {
   color: #fff;
 }
+.header .checkboxWrapper {
+  margin: 0 10px;
+}
 .header button.submit {
   width: 30px;
   background: transparent;
@@ -109,6 +112,26 @@ main .booksSection .booksSectionTitle {
   font-weight: 700;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+}
+main .booksSection h2.booksSectionTitle:after,
+main .booksSection h2.booksSectionTitle:before {
+  content: "";
+  width: 40%;
+  height: 3px;
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 99999;
+  background: #272a7f;
+}
+main .booksSection h2.booksSectionTitle:after {
+  right: 0;
+}
+main .booksSection h2.booksSectionTitle:before {
+  left: 0;
 }
 main .booksSection .sortButtns {
   display: flex;
