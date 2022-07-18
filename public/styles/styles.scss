@@ -16,11 +16,6 @@ $headerHeight : 80px;
 
 body {
     min-height: 100%;
-    // background: rgb(82,79,75);
-    // background: linear-gradient(342deg, rgba(82,79,75,0.8357162689294468) 51%, rgba(198,200,196,0.8432139127101581) 100%) fixed;
-    
-    // background: rgb(216,216,220);
-    // background: linear-gradient(90deg, rgba(216,216,220,1) 13%, rgba(164,164,206,1) 61%, rgba(189,226,234,1) 100%) fixed;
     background-color: #111;
 }
 
@@ -30,7 +25,7 @@ body {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #ccc;
+    background-color: #222;
   }
   
   ::-webkit-scrollbar {

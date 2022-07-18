@@ -368,7 +368,7 @@ body {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #ccc;
+  background-color: #222;
 }
 
 ::-webkit-scrollbar {

@@ -24,7 +24,8 @@ document.querySelector('#search').addEventListener('submit', (event) => {
         event.preventDefault();
     
         if (input.value == "") {
-            alert("boom");
+            // need to improve to popup!!!
+            alert("Not valid search"); 
             return false;
         } else {
             fetchBooks(input.value)
@@ -94,9 +95,10 @@ const renderBooks = ( books = []) => {
             document.querySelector('.booksWrapper').innerHTML = books.map(renderBook).join("");
             document.querySelector('.sortButtns').style.display = "flex";
         } else {
-            if (!document.querySelector('.errorNote')) {
-                document.querySelector('.booksSection').innerHTML += "<h2 class='errorNote'>There are no matches, try again!</h2>";
-            }
+            // if (!document.querySelector('.errorNote')) {
+            //     document.querySelector('.booksSection').innerHTML += "<h2 class='errorNote'>There are no matches, try again!</h2>";
+            // }
+            document.querySelector('.errorNote').style.display = "block";
         }
         document.querySelector('.loader').style.display = "none";
     } catch(error) {
@@ -175,7 +177,7 @@ const sortByPublishedDate = (setDirection) => {
     }
 }
 
-btnSortByDate.addEventListener("click", (event) => {
+document.querySelector('p#sortByDate').addEventListener("click", (event) => {
     const setDirection = btnSortByDate.attributes.set.nodeValue;
     sortByPublishedDate(setDirection);
     renderBooks(books);
@@ -201,7 +203,7 @@ const sortByAmountOfPages = (setDirection) => {
     }                                   
 }
 
-btnsortByPages.addEventListener("click", (event) => {
+document.querySelector('p#sortByPages').addEventListener("click", (event) => {
     const setDirection = btnsortByPages.attributes.set.nodeValue;
     sortByAmountOfPages(setDirection);
     renderBooks(books);
