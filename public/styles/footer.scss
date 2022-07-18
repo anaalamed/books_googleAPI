@@ -1,0 +1,29 @@
+.footer {
+    height: auto;
+    background-image: url("https://e-square.io/esq-bg.2d4cf37f1b221e7c.webp");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: 50% 50%;
+    width: 100%;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    position: relative;
+    bottom: 0;
+
+    h4, h5 {
+        margin: 0 auto;
+        color: #fff;
+        width: auto;
+        text-align: center;
+    }
+
+    .footerDate {
+        font-size: 25px;
+        padding: 25px 0 15px;
+    }
+
+    .footerName {
+        font-size: 20px;
+        padding: 5px 0 20px;
+    }
+}

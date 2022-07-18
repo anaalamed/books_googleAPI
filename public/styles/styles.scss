@@ -1,0 +1,53 @@
+$main_color: #272a7f;
+$secondary_color: #35DCD9;
+$white_color: #fff;
+$black_color: #111;
+$grey_color: rgb(199, 196, 196);
+
+$breakpoint-mobile: 767px;
+$breakpoint-test: 480px;
+
+
+$headerHeight : 80px;
+
+@import "header";
+@import "booksSection";
+@import "footer";
+
+body {
+    min-height: 100%;
+    // background: rgb(82,79,75);
+    // background: linear-gradient(342deg, rgba(82,79,75,0.8357162689294468) 51%, rgba(198,200,196,0.8432139127101581) 100%) fixed;
+    
+    // background: rgb(216,216,220);
+    // background: linear-gradient(90deg, rgba(216,216,220,1) 13%, rgba(164,164,206,1) 61%, rgba(189,226,234,1) 100%) fixed;
+    background-color: #111;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    // border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #35DCD9; 
+    border-radius: 10px;
+  }
+
+
+

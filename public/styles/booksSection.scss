@@ -1,0 +1,265 @@
+$lineHeight: 20px;
+$lineHeightTitle: 25px;
+
+
+main {
+    max-width: 1400px;
+    min-height: 77vh;
+    margin: 0 auto;
+    margin-top: $headerHeight; 
+
+    .booksSection {
+        .booksSectionTitle {
+            color: $white_color;
+            padding: 14px;
+            font-size: 38px;
+            font-weight: 700;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+
+            &:after, 
+            &::before {
+                content: "";
+                width: 40%;
+                height: 1px;
+                position: absolute;
+                display: block;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                background: $grey_color;
+    
+                @media (max-width: $breakpoint-mobile) {
+                    width: 20%;
+                }
+            }
+
+            &:before {
+                left: 0;
+            }
+            &:after {
+                right: 0;
+            }
+        }
+
+        .sortButtns {
+            display: flex;
+            justify-content: start;
+            display: none;
+
+            .sortButton {
+                color: $grey_color;
+                margin: 0 25px;
+                text-align: center;
+                border-radius: 10px 30px 10px 30px;
+                font-weight: 700;
+
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+
+            .sortButton.activeSort[set="down"]:after {
+                content: url("../icons/up.png");
+                background-size: cover;
+                position: absolute;
+            }
+
+            .sortButton.activeSort[set="up"]:after {
+                content: url("../icons/down.png");
+                position: absolute;
+            }
+        }
+
+        h2.errorNote {
+            text-align: center;
+            color: $white_color;
+        }
+
+        .booksWrapper {            
+            display: grid;
+            justify-content: center;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 240px));
+            grid-auto-rows: 1fr;
+            grid-gap: 35px;
+            margin: 0 auto;
+            margin-top: 20px;
+            grid-auto-flow: dense;
+            padding: 0 20px;
+            
+            @media (max-width: $breakpoint-test) {
+                padding: 0 10px;
+                grid-template-columns: repeat(auto-fill, minmax(160px, 180px));
+                grid-gap: 10px;
+            }
+    
+            .book {
+                display: flex;
+                flex-direction: column;
+                background-color: $main_color;
+                margin-bottom: 30px;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 5px 5px 15px 5px #000000;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+    
+                .title {
+                    padding: 5px;
+                    font-weight: 600;
+                    font-size: 21px;
+                    text-align: center;
+                    overflow: hidden;
+                    line-height: $lineHeightTitle;
+                    height: $lineHeightTitle*2;
+                    position: relative;
+                    box-sizing: content-box;
+
+                    &::after {
+                        content: "";
+                        width: 40px;
+                        height: 2px;
+                        display: block;
+                        position: absolute;
+                        margin: auto;
+                        left: 0;
+                        right: 0;
+                        top: auto;
+                        bottom: 0;
+                        background-color: $secondary_color;
+                    }
+
+                    @media (max-width: $breakpoint-mobile) {
+                        font-size: 17px;
+                        line-height: $lineHeight;
+                        height: $lineHeight*2;
+                    }
+                }
+    
+                .imgWrapper {
+                    overflow: hidden;
+                    position: relative;
+                    height: 280px;
+                    // border-bottom: 3px solid $main_color;
+
+                    @media (max-width: $breakpoint-mobile) {
+                       height: 240px;
+                    }
+    
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        transform: scale(1);
+                        transition: 1s;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                    }
+                }
+    
+                .tooltip  {
+                    position: relative;
+                    display: inline-block;
+                    width: 100%;
+                    margin: 8px auto 5px;
+                    
+                    .description {
+                        color: #fff;
+                        padding: 0 10px;      
+                        overflow: hidden;
+                        font-size: 16px;
+                        line-height: $lineHeight;
+                        height: $lineHeight*4;
+    
+                        @media (max-width: $breakpoint-mobile) {
+                            height: $lineHeight*3;
+                            font-size: 13px;
+                        }
+                    }
+
+                    .tooltiptext {
+                      visibility: hidden;
+                      width: auto;
+                      height: 185px;
+                      overflow-y: auto;
+                      background-color: $main_color;
+                      color: #fff;
+                      text-align: center;
+                      position: absolute;
+                      z-index: 1;
+                      top: -68px;
+                      left: 0;
+                      right: 0;
+                      margin: 0 auto;
+                      opacity: 0;
+                      transition: opacity 0.3s;
+                    }
+                    
+                    .tooltiptext::after {
+                      content: "";
+                      position: absolute;
+                    //   border-width: 5px;
+                    //   border-style: solid;
+                    //   border-color: #fff;
+                    }
+                    
+                    &:hover .tooltiptext {
+                      visibility: visible;
+                      opacity: 1;
+                    }
+                  }
+
+                .author {
+                    text-align: center;
+                    color: $secondary_color;
+                    padding: 5px 10px;
+                    overflow: hidden;
+                    line-height: $lineHeight;
+                    height: $lineHeight;
+                }
+            }                
+    
+            .book:hover {
+                .imgWrapper {
+                    img {
+                        transform: scale(1.1);
+                        transition: 1s;
+                    }
+                }
+                .author {
+                    color: $white_color;
+                    background-color: $secondary_color;
+                }
+            }
+        }
+    }
+
+    .loader {
+        border: 16px solid $main_color; /* Light grey */
+        border-top: 16px solid $secondary_color; /* Blue */
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+}

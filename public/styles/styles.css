@@ -1,0 +1,389 @@
+.header {
+  background-color: #272a7f;
+  height: 80px;
+  width: 100%;
+  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .logoTitle {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.header .logoTitle .logoWrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 20px;
+}
+.header .logoTitle .logoWrapper img {
+  width: 100%;
+  height: 100%;
+}
+.header .logoTitle .headerTitle {
+  color: #fff;
+  padding: 10px;
+}
+@media (max-width: 767px) {
+  .header .logoTitle .headerTitle {
+    display: none;
+  }
+}
+.header form#search {
+  position: relative;
+  right: 30px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  .header form#search {
+    right: 10px;
+    flex-direction: column-reverse;
+  }
+}
+.header form#search .searchWrapper {
+  position: relative;
+}
+.header form#search .searchWrapper input#search {
+  border-radius: 30px;
+  height: 40px;
+  text-indent: 10px;
+  width: 300px;
+  overflow: hidden;
+  z-index: 9999;
+  background: #fff;
+  color: #272a7f;
+}
+.header form#search .searchWrapper input#search::placeholder {
+  color: #272a7f;
+}
+.header form#search .searchWrapper input#search:focus {
+  outline: none;
+  box-shadow: 3px 2px 10px 2px #000;
+}
+@media (max-width: 767px) {
+  .header form#search .searchWrapper input#search {
+    width: 200px;
+  }
+}
+.header form#search .searchWrapper input[type=search]::-webkit-search-decoration,
+.header form#search .searchWrapper input[type=search]::-webkit-search-cancel-button,
+.header form#search .searchWrapper input[type=search]::-webkit-search-results-button,
+.header form#search .searchWrapper input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+.header form#search .searchWrapper button.submit {
+  width: 20px;
+  background: transparent;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  border: none;
+}
+.header form#search .checkboxWrapper {
+  margin: 0 10px;
+}
+.header form#search .checkboxWrapper .searchByAuthorLabel {
+  color: #fff;
+}
+
+main {
+  max-width: 1400px;
+  min-height: 77vh;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+main .booksSection .booksSectionTitle {
+  color: #fff;
+  padding: 14px;
+  font-size: 38px;
+  font-weight: 700;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+main .booksSection .booksSectionTitle:after, main .booksSection .booksSectionTitle::before {
+  content: "";
+  width: 40%;
+  height: 1px;
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #c7c4c4;
+}
+@media (max-width: 767px) {
+  main .booksSection .booksSectionTitle:after, main .booksSection .booksSectionTitle::before {
+    width: 20%;
+  }
+}
+main .booksSection .booksSectionTitle:before {
+  left: 0;
+}
+main .booksSection .booksSectionTitle:after {
+  right: 0;
+}
+main .booksSection .sortButtns {
+  display: flex;
+  justify-content: start;
+  display: none;
+}
+main .booksSection .sortButtns .sortButton {
+  color: #c7c4c4;
+  margin: 0 25px;
+  text-align: center;
+  border-radius: 10px 30px 10px 30px;
+  font-weight: 700;
+}
+main .booksSection .sortButtns .sortButton:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+main .booksSection .sortButtns .sortButton.activeSort[set=down]:after {
+  content: url("../icons/up.png");
+  background-size: cover;
+  position: absolute;
+}
+main .booksSection .sortButtns .sortButton.activeSort[set=up]:after {
+  content: url("../icons/down.png");
+  position: absolute;
+}
+main .booksSection h2.errorNote {
+  text-align: center;
+  color: #fff;
+}
+main .booksSection .booksWrapper {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 240px));
+  grid-auto-rows: 1fr;
+  grid-gap: 35px;
+  margin: 0 auto;
+  margin-top: 20px;
+  grid-auto-flow: dense;
+  padding: 0 20px;
+}
+@media (max-width: 480px) {
+  main .booksSection .booksWrapper {
+    padding: 0 10px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 180px));
+    grid-gap: 10px;
+  }
+}
+main .booksSection .booksWrapper .book {
+  display: flex;
+  flex-direction: column;
+  background-color: #272a7f;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+main .booksSection .booksWrapper .book a {
+  color: #fff;
+  text-decoration: none;
+}
+main .booksSection .booksWrapper .book .title {
+  padding: 5px;
+  font-weight: 600;
+  font-size: 21px;
+  text-align: center;
+  overflow: hidden;
+  line-height: 25px;
+  height: 50px;
+  position: relative;
+  box-sizing: content-box;
+}
+main .booksSection .booksWrapper .book .title::after {
+  content: "";
+  width: 40px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: 0;
+  background-color: #35DCD9;
+}
+@media (max-width: 767px) {
+  main .booksSection .booksWrapper .book .title {
+    font-size: 17px;
+    line-height: 20px;
+    height: 40px;
+  }
+}
+main .booksSection .booksWrapper .book .imgWrapper {
+  overflow: hidden;
+  position: relative;
+  height: 280px;
+}
+@media (max-width: 767px) {
+  main .booksSection .booksWrapper .book .imgWrapper {
+    height: 240px;
+  }
+}
+main .booksSection .booksWrapper .book .imgWrapper img {
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: 1s;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+main .booksSection .booksWrapper .book .tooltip {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 8px auto 5px;
+}
+main .booksSection .booksWrapper .book .tooltip .description {
+  color: #fff;
+  padding: 0 10px;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 20px;
+  height: 80px;
+}
+@media (max-width: 767px) {
+  main .booksSection .booksWrapper .book .tooltip .description {
+    height: 60px;
+    font-size: 13px;
+  }
+}
+main .booksSection .booksWrapper .book .tooltip .tooltiptext {
+  visibility: hidden;
+  width: auto;
+  height: 185px;
+  overflow-y: auto;
+  background-color: #272a7f;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  top: -68px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+main .booksSection .booksWrapper .book .tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+}
+main .booksSection .booksWrapper .book .tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+main .booksSection .booksWrapper .book .author {
+  text-align: center;
+  color: #35DCD9;
+  padding: 5px 10px;
+  overflow: hidden;
+  line-height: 20px;
+  height: 20px;
+}
+main .booksSection .booksWrapper .book:hover .imgWrapper img {
+  transform: scale(1.1);
+  transition: 1s;
+}
+main .booksSection .booksWrapper .book:hover .author {
+  color: #fff;
+  background-color: #35DCD9;
+}
+main .loader {
+  border: 16px solid #272a7f;
+  /* Light grey */
+  border-top: 16px solid #35DCD9;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.footer {
+  height: auto;
+  background-image: url("https://e-square.io/esq-bg.2d4cf37f1b221e7c.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  margin-top: 50px;
+  padding-bottom: 20px;
+  position: relative;
+  bottom: 0;
+}
+.footer h4, .footer h5 {
+  margin: 0 auto;
+  color: #fff;
+  width: auto;
+  text-align: center;
+}
+.footer .footerDate {
+  font-size: 25px;
+  padding: 25px 0 15px;
+}
+.footer .footerName {
+  font-size: 20px;
+  padding: 5px 0 20px;
+}
+
+body {
+  min-height: 100%;
+  background-color: #111;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #35DCD9;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=styles.css.map */
