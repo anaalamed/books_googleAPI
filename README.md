@@ -22,7 +22,7 @@ There is an option to sort the books by published date or amount of page:
 
 </br>
 
-The page is responsive and match all the sizes of screens.
+The page is responsive and match all the sizes of screens:
 
 <p align="center">
     <img alt="desktop" src="https://firebasestorage.googleapis.com/v0/b/books--api.appspot.com/o/Screen%20Shot%202022-07-18%20at%2021.13.43.png?alt=media&token=1d384d93-74fa-41ea-aec1-ed6176ae1c01" width="100%" >
@@ -32,6 +32,15 @@ The page is responsive and match all the sizes of screens.
 </p>
 </br>
 
-If the API returns empry array it will ask you to try again:    
+The card of book contains image, title, description and it's author. For all the fields there are default values, like default picture or "anonymous" instead of author. On hover there is a tooltip for long description:
+![card book](https://firebasestorage.googleapis.com/v0/b/books--api.appspot.com/o/Screen%20Shot%202022-07-18%20at%2022.21.07.png?alt=media&token=d4a8f4f6-02ca-4aa6-b6b3-305f0c4e3188)  
+
+
+At html structure there are some attributes to check the sort methods: 
+![card html](https://firebasestorage.googleapis.com/v0/b/books--api.appspot.com/o/Screen%20Shot%202022-07-18%20at%2022.26.10.png?alt=media&token=aad5c640-e001-42b9-8ca9-0dfc0e7ee94f)
+
+</br>
+
+If the API returns empty array it will ask you to try again:    
 
 ![alt text](https://firebasestorage.googleapis.com/v0/b/books--api.appspot.com/o/Screen%20Shot%202022-07-18%20at%2021.56.42.png?alt=media&token=a81f2821-1db6-4b08-8f75-6b4ec6646b9b) 
