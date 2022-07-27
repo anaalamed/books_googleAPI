@@ -95,9 +95,6 @@ const renderBooks = ( books = []) => {
             document.querySelector('.booksWrapper').innerHTML = books.map(renderBook).join("");
             document.querySelector('.sortButtns').style.display = "flex";
         } else {
-            // if (!document.querySelector('.errorNote')) {
-            //     document.querySelector('.booksSection').innerHTML += "<h2 class='errorNote'>There are no matches, try again!</h2>";
-            // }
             document.querySelector('.errorNote').style.display = "block";
         }
         document.querySelector('.loader').style.display = "none";
@@ -111,18 +108,16 @@ const renderBook = (book = {}) =>  {
     try {
         const description = makeShortDescription(book);
         return `<div class='book' id=${book.id} data-published=${book.volumeInfo.publishedDate?.slice(0,4) || 0} data-pages=${book.volumeInfo.pageCount || 0}>
-        <a href="${book.volumeInfo.infoLink}" target="_blank">
-            <div class='imgWrapper'><img class='image' src=${book.volumeInfo.imageLinks?.thumbnail? book.volumeInfo.imageLinks.thumbnail : 'https://firebasestorage.googleapis.com/v0/b/books--api.appspot.com/o/2.png?alt=media&token=c67fdcbc-db88-4ab8-b3b7-e8c703603779'}></div>
-            <h3 class='title' > ${book.volumeInfo.title || "Click for more info!"}</h3>
-            <div class='tooltip'> 
-                <p class='description'> ${description || "Click for more info!"}</p> 
-                <span class='tooltiptext'>${book.volumeInfo.description || "Click for more info!" }</span>
-            </div>
-            <p class='author'>${book.volumeInfo.authors ? book.volumeInfo.authors[0] : "Anonymous..."}</p>
-        </a>
-    </div>`;
-
-    // <p class='description'> ${description || "Click for more info!"}</p> 
+            <a href="${book.volumeInfo.infoLink}" target="_blank">
+                <div class='imgWrapper'><img class='image' src=${book.volumeInfo.imageLinks?.thumbnail? book.volumeInfo.imageLinks.thumbnail : 'https://firebasestorage.googleapis.com/v0/b/books--api.appspot.com/o/2.png?alt=media&token=c67fdcbc-db88-4ab8-b3b7-e8c703603779'}></div>
+                <h3 class='title' > ${book.volumeInfo.title || "Click for more info!"}</h3>
+                <div class='tooltip'> 
+                    <p class='description'> ${description || "Click for more info!"}</p> 
+                    <span class='tooltiptext'>${book.volumeInfo.description || "Click for more info!" }</span>
+                </div>
+                <p class='author'>${book.volumeInfo.authors ? book.volumeInfo.authors[0] : "Anonymous..."}</p>
+            </a>
+        </div>`;
     } catch(error) {
         console.log("renderBook function error -> ", error);
     }

@@ -5,8 +5,7 @@ $black_color: #111;
 $grey_color: rgb(199, 196, 196);
 
 $breakpoint-mobile: 767px;
-$breakpoint-test: 480px;
-
+$breakpoint-mobileS: 480px;
 
 $headerHeight : 80px;
 
@@ -24,6 +23,8 @@ body {
     padding: 0;
 }
 
+
+// scrollbar
 body::-webkit-scrollbar-thumb {
     background-color: #222;
   }
@@ -32,17 +33,11 @@ body::-webkit-scrollbar-thumb {
     width: 15px;
   }
   
-  /* Track */
   ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey; 
-    // border-radius: 10px;
   }
    
-  /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #35DCD9; 
     border-radius: 10px;
   }
-
-
-

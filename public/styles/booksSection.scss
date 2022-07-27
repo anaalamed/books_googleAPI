@@ -1,7 +1,6 @@
 $lineHeight: 20px;
 $lineHeightTitle: 25px;
 
-
 main {
     max-width: 1400px;
     min-height: 77vh;
@@ -71,6 +70,11 @@ main {
                 content: url("../icons/down.png");
                 position: absolute;
             }
+
+            @media (max-width: $breakpoint-mobile) {
+                flex-direction: column;
+                align-items: start;
+            }
         }
 
         h2.errorNote {
@@ -89,10 +93,11 @@ main {
             grid-auto-flow: dense;
             padding: 0 20px;
             
-            @media (max-width: $breakpoint-test) {
-                padding: 0 10px;
-                grid-template-columns: repeat(auto-fill, minmax(160px, 180px));
-                grid-gap: 10px;
+            @media (max-width: $breakpoint-mobileS) {
+                padding: 0 6px;
+                grid-template-columns: repeat(auto-fill, minmax(160px, 175px));
+                grid-gap: unset;
+                justify-content: space-around;
             }
     
             .book {
@@ -110,7 +115,7 @@ main {
                 }
     
                 .title {
-                    padding: 5px;
+                    padding: 4px;
                     font-weight: 600;
                     font-size: 21px;
                     text-align: center;
@@ -138,6 +143,7 @@ main {
                         font-size: 17px;
                         line-height: $lineHeight;
                         height: $lineHeight*2;
+                        padding: 2px;
                     }
                 }
     
@@ -145,7 +151,6 @@ main {
                     overflow: hidden;
                     position: relative;
                     height: 280px;
-                    // border-bottom: 3px solid $main_color;
 
                     @media (max-width: $breakpoint-mobile) {
                        height: 240px;
@@ -205,9 +210,6 @@ main {
                     .tooltiptext::after {
                       content: "";
                       position: absolute;
-                    //   border-width: 5px;
-                    //   border-style: solid;
-                    //   border-color: #fff;
                     }
                     
                     &:hover .tooltiptext {
@@ -242,8 +244,8 @@ main {
     }
 
     .loader {
-        border: 16px solid $main_color; /* Light grey */
-        border-top: 16px solid $secondary_color; /* Blue */
+        border: 16px solid $main_color; 
+        border-top: 16px solid $secondary_color; 
         border-radius: 50%;
         width: 120px;
         height: 120px;

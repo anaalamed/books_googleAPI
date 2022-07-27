@@ -90,8 +90,18 @@
 .header form#search .checkboxWrapper {
   margin: 0 10px;
 }
+@media (max-width: 767px) {
+  .header form#search .checkboxWrapper {
+    margin: 5px 0 0;
+  }
+}
 .header form#search .checkboxWrapper .searchByAuthorLabel {
   color: #fff;
+}
+@media (max-width: 767px) {
+  .header form#search .checkboxWrapper .searchByAuthorLabel {
+    font-size: 14px;
+  }
 }
 
 main {
@@ -156,6 +166,12 @@ main .booksSection .sortButtns .sortButton.activeSort[set=up]:after {
   content: url("../icons/down.png");
   position: absolute;
 }
+@media (max-width: 767px) {
+  main .booksSection .sortButtns {
+    flex-direction: column;
+    align-items: start;
+  }
+}
 main .booksSection h2.errorNote {
   text-align: center;
   color: #fff;
@@ -173,9 +189,10 @@ main .booksSection .booksWrapper {
 }
 @media (max-width: 480px) {
   main .booksSection .booksWrapper {
-    padding: 0 10px;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 180px));
-    grid-gap: 10px;
+    padding: 0 6px;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 175px));
+    grid-gap: unset;
+    justify-content: space-around;
   }
 }
 main .booksSection .booksWrapper .book {
@@ -192,7 +209,7 @@ main .booksSection .booksWrapper .book a {
   text-decoration: none;
 }
 main .booksSection .booksWrapper .book .title {
-  padding: 5px;
+  padding: 4px;
   font-weight: 600;
   font-size: 21px;
   text-align: center;
@@ -220,6 +237,7 @@ main .booksSection .booksWrapper .book .title::after {
     font-size: 17px;
     line-height: 20px;
     height: 40px;
+    padding: 2px;
   }
 }
 main .booksSection .booksWrapper .book .imgWrapper {
@@ -306,9 +324,7 @@ main .booksSection .booksWrapper .book:hover .author {
 }
 main .loader {
   border: 16px solid #272a7f;
-  /* Light grey */
   border-top: 16px solid #35DCD9;
-  /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -356,6 +372,11 @@ main .loader {
   font-size: 20px;
   padding: 5px 0 20px;
 }
+@media (max-width: 767px) {
+  .footer {
+    padding-bottom: 0;
+  }
+}
 
 body {
   min-height: 100%;
@@ -375,12 +396,10 @@ body::-webkit-scrollbar-thumb {
   width: 15px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #35DCD9;
   border-radius: 10px;

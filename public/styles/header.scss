@@ -97,8 +97,15 @@
         .checkboxWrapper {
             margin: 0 10px;
 
+            @media (max-width: $breakpoint-mobile) {
+                margin: 5px 0 0;
+            }
             .searchByAuthorLabel {
                 color: #fff;
+
+                @media (max-width: $breakpoint-mobile) {
+                    font-size: 14px;
+                }
             }
         }
     }
